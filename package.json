@@ -1,0 +1,32 @@
+{
+  "name": "gatsby-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node .",
+    "develop": "concurrently npm:develop:server npm:develop:client",
+    "build": "npm run build:client",
+    "build:client": "cd client && gatsby build",
+    "develop:server": "nodemon npm run start",
+    "develop:client": "cd client && gatsby develop",
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "client/*"
+    ]
+  },
+  "keywords": [],
+  "author": "Charles Eugene Loubao",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "gatsby-cli": "^3.9.0",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
