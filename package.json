@@ -4,6 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
+    "postinstall": "cd client && npm install",
     "start": "cross-env NODE_ENV=production node .",
     "develop": "concurrently npm:develop:server npm:develop:client",
     "build": "npm run build:client",
